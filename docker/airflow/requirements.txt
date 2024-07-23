@@ -1,0 +1,2 @@
+apache-airflow[celery,postgres,s3]==2.9.3
+apache-airflow-providers-apache-spark==4.8.2
