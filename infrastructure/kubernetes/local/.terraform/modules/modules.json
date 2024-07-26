@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"k8s","Source":"./kind","Dir":"kind"},{"Key":"kafka","Source":"./kafka","Dir":"kafka"},{"Key":"minio","Source":"./minio","Dir":"minio"},{"Key":"scylla","Source":"./scylla","Dir":"scylla"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"airflow","Source":"./airflow","Dir":"airflow"},{"Key":"k8s","Source":"./kind","Dir":"kind"},{"Key":"kafka","Source":"./kafka","Dir":"kafka"},{"Key":"minio","Source":"./minio","Dir":"minio"},{"Key":"spark","Source":"./spark","Dir":"spark"}]}

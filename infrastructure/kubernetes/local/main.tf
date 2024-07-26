@@ -17,3 +17,13 @@ module "kafka"{
     source = "./kafka"
     k8s_config_path = "/home/seoerick/.kube/config"
 }
+
+module "airflow"{
+    source = "./airflow"
+    k8s_config_path = "/home/seoerick/.kube/config"
+}
+
+module "spark"{
+    source = "./spark"
+    k8s_config_path = "/home/seoerick/.kube/config"
+}

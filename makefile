@@ -1,16 +1,9 @@
 .PHONY: airflow spark kafka minio up clean
 
-airflow:
-	docker-compose -f docker/docker-compose.yml up -d airflow
-
-sqlite:
-	docker-compose -f docker/docker-compose.yml up -d sqlite
-
-up:
-	docker-compose -f docker/docker-compose.yml up -d --build
-
-clean:
-	docker-compose -f docker/docker-compose.yml down --volumes --remove-orphans
+build-airflow:
+	docker build -t seoerick/airflow:2.7.1 ./infrastructure/images/airflow
+	docker tag seoerick/airflow:2.7.1 seoerick/airflow:2.7.1
+	docker push seoerick/airflow:2.7.1
 
 arch-init: 
 	terraform -chdir=./infrastructure/kubernetes/local init
