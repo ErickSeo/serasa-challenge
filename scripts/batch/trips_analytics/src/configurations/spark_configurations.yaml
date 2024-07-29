@@ -1,0 +1,13 @@
+spark:
+  fs.s3a.access.key: ${ACCESS_KEY}
+  fs.s3a.secret.key: ${SECRET_KEY}
+  fs.s3a.endpoint: ${S3_ENDPOINT}
+  fs.s3a.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
+  fs.s3a.connection.ssl.enabled: false
+  fs.s3a.path.style.access: true
+  fs.s3a.signing-algorithm: S3SignerType
+  fs.s3a.aws.credentials.provider: org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider
+  fs.s3a.multipart.size: 104857600
+  fs.s3a.block.size: 33554432
+  fs.s3a.threads.max: 256
+  fs.s3a.endpoint.region: us-east-1

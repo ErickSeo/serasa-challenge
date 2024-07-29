@@ -8,8 +8,6 @@ terraform {
   }
 }
 
-provider "kind" {
-}
 
 resource "kind_cluster" "default" {
   name = var.cluster_name
