@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kafka-producer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csv-kafka-producer
+  namespace: kafka-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csv-kafka-producer
+  template:
+    metadata:
+      labels:
+        app: csv-kafka-producer
+    spec:
+      containers:
+      - name: csv-kafka-producer
+        image: seoerick/csv-kafka-producer:0.0.2
+        imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: csv-kafka-producer-service
+  namespace: kafka-producer
+spec:
+  selector:
+    app: csv-kafka-producer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
