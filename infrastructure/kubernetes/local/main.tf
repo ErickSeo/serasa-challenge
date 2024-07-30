@@ -27,3 +27,7 @@ module "spark"{
     source = "./spark"
     k8s_config_path = "/home/seoerick/.kube/config"
 }
+
+# module "elyra"{
+#     source = "./elyra"
+# }

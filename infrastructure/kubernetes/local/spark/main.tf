@@ -15,6 +15,11 @@ terraform {
     }
   }
 }
+resource "kubernetes_namespace" "processing-ns" {
+  metadata {
+    name = "processing"
+  }
+}
 
 resource "kubernetes_service_account" "spark_sa" {
   metadata {
@@ -81,3 +86,5 @@ resource "helm_release" "spark_operator" {
   create_namespace = true
   verify           = false
 }
+#kubectl delete role spark-role -n processing
+#helm install spark-operator --namespace processing --create-namespace --repo https://kubeflow.github.io/spark-operator spark-operator
